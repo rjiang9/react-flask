@@ -1,3 +1,64 @@
+From : https://dev.to/nagatodev/how-to-connect-flask-to-reactjs-1k8i
+
+
+Points:
+
+## 1) set backend in the react-project folder:
+.
+├── README.md
+├── backend
+│   ├── __pycache__
+│   ├── app.py
+│   └── env
+├── node_modules
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+└── src
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    ├── logo.svg
+    ├── reportWebVitals.js
+    └── setupTests.js
+
+834 directories, 19 files
+
+
+## 2. In the package.js, set 2 things:
+    1) "proxy": "http://localhost:5000"
+
+    2) In 'scripts' section:
+        "start-backend": "cd backend && source env/bin/flask run --no-debugger"
+
+        then you can start backend any where in the project (back or front) and does not have to be in the backend/
+
+
+## 3. The backend virtual env is created using python3 venv, not Conda:
+    python -m venv env
+    source env/bin/activate
+
+## 4. Backend: 
+    (env)/ 
+    pip install python-dotenv
+    touch .flaskenv
+    vim .flaskenv, add:
+        FLASK_APP=app.py
+        FLASK_ENV=development
+    This way, you don't have to export the 2 variables every time before run 'flask run'
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
