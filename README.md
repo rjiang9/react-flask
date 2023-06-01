@@ -4,7 +4,7 @@ From : https://dev.to/nagatodev/how-to-connect-flask-to-reactjs-1k8i
 Points:
 
 ## 1) set backend in the react-project folder:
-.
+```
 ├── README.md
 ├── backend
 │   ├── __pycache__
@@ -31,7 +31,7 @@ Points:
     └── setupTests.js
 
 834 directories, 19 files
-
+```
 
 ## 2. In the package.js, set 2 things:
     1) "proxy": "http://localhost:5000"
